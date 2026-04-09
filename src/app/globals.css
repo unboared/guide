@@ -4,49 +4,27 @@
   --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
 
-  --color-background: oklch(0.985 0 0);
-  --color-foreground: oklch(0.145 0 0);
-  --color-card: oklch(1 0 0);
-  --color-card-foreground: oklch(0.145 0 0);
-  --color-primary: oklch(0.55 0.2 265);
-  --color-primary-foreground: oklch(1 0 0);
-  --color-secondary: oklch(0.96 0.005 265);
-  --color-secondary-foreground: oklch(0.25 0 0);
-  --color-muted: oklch(0.96 0 0);
-  --color-muted-foreground: oklch(0.55 0 0);
-  --color-accent: oklch(0.96 0.01 265);
-  --color-accent-foreground: oklch(0.25 0 0);
-  --color-border: oklch(0.92 0 0);
-  --color-ring: oklch(0.55 0.2 265);
+  /* Dark-first theme: bg #070219, accent #FF2453 */
+  --color-background: #070219;
+  --color-foreground: #f0edf5;
+  --color-card: #0e0930;
+  --color-card-foreground: #f0edf5;
+  --color-primary: #FF2453;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #1a1040;
+  --color-secondary-foreground: #e0dce8;
+  --color-muted: #140e30;
+  --color-muted-foreground: #9890ab;
+  --color-accent: #1a1040;
+  --color-accent-foreground: #e0dce8;
+  --color-border: #221a4a;
+  --color-ring: #FF2453;
 
-  --color-sidebar-bg: oklch(0.98 0.003 265);
-  --color-sidebar-border: oklch(0.93 0 0);
-  --color-sidebar-active: oklch(0.55 0.2 265);
+  --color-sidebar-bg: #0a0525;
+  --color-sidebar-border: #1a1040;
+  --color-sidebar-active: #FF2453;
 
   --radius: 0.5rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  @theme inline {
-    --color-background: oklch(0.12 0.005 265);
-    --color-foreground: oklch(0.95 0 0);
-    --color-card: oklch(0.16 0.005 265);
-    --color-card-foreground: oklch(0.95 0 0);
-    --color-primary: oklch(0.65 0.2 265);
-    --color-primary-foreground: oklch(0.12 0 0);
-    --color-secondary: oklch(0.2 0.01 265);
-    --color-secondary-foreground: oklch(0.9 0 0);
-    --color-muted: oklch(0.2 0 0);
-    --color-muted-foreground: oklch(0.6 0 0);
-    --color-accent: oklch(0.2 0.01 265);
-    --color-accent-foreground: oklch(0.9 0 0);
-    --color-border: oklch(0.25 0.005 265);
-    --color-ring: oklch(0.65 0.2 265);
-
-    --color-sidebar-bg: oklch(0.14 0.005 265);
-    --color-sidebar-border: oklch(0.22 0.005 265);
-    --color-sidebar-active: oklch(0.65 0.2 265);
-  }
 }
 
 /* Prose styles for MDX content */

@@ -8,6 +8,7 @@ type GameCardProps = {
   players: string;
   duration: string;
   category: "quiz" | "action";
+  icon?: string;
   color: string;
 };
 
@@ -18,6 +19,7 @@ export function GameCard({
   players,
   duration,
   category,
+  icon,
   color,
 }: GameCardProps) {
   return (
@@ -26,12 +28,20 @@ export function GameCard({
       className="group block rounded-xl border border-border bg-card p-5 transition-all hover:border-primary/30 hover:shadow-md"
     >
       <div className="flex items-start gap-4">
-        <div
-          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg text-white font-bold text-lg"
-          style={{ backgroundColor: color }}
-        >
-          {name[0]}
-        </div>
+        {icon ? (
+          <img
+            src={icon}
+            alt={name}
+            className="h-12 w-12 shrink-0 rounded-lg object-cover"
+          />
+        ) : (
+          <div
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg text-white font-bold text-lg"
+            style={{ backgroundColor: color }}
+          >
+            {name[0]}
+          </div>
+        )}
         <div className="min-w-0">
           <div className="flex items-center gap-2 mb-1">
             <h3 className="font-semibold group-hover:text-primary transition-colors">

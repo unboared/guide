@@ -4,12 +4,15 @@ import * as runtime from "react/jsx-runtime";
 import { Callout } from "@/components/callout";
 import { Steps, Step } from "@/components/steps";
 import { GameCard } from "@/components/game-card";
+import { Accordion, AccordionGroup } from "@/components/accordion";
 
 const components = {
   Callout,
   Steps,
   Step,
   GameCard,
+  Accordion,
+  AccordionGroup,
 };
 
 export async function compileMDX(source: string) {
