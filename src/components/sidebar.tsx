@@ -30,10 +30,10 @@ function SidebarContent() {
                   <Link
                     href={`/docs/${item.slug}`}
                     className={cn(
-                      "block rounded-md px-2 py-1.5 text-sm transition-colors",
+                      "block rounded-md px-2 py-1.5 text-sm transition-all duration-150",
                       isActive
-                        ? "bg-accent text-sidebar-active font-medium"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                        ? "bg-primary/10 text-primary font-medium border-l-2 border-primary -ml-px"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted border-l-2 border-transparent"
                     )}
                   >
                     {title}

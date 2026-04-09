@@ -3,14 +3,16 @@
 @theme inline {
   --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+  --font-display: "Sora", "Sora Fallback", ui-sans-serif, system-ui, sans-serif;
 
-  /* Dark-first theme: bg #070219, accent #FF2453 */
+  /* Core brand: dark navy + red accent */
   --color-background: #070219;
   --color-foreground: #f0edf5;
   --color-card: #0e0930;
   --color-card-foreground: #f0edf5;
   --color-primary: #FF2453;
   --color-primary-foreground: #ffffff;
+  --color-primary-glow: #FF245330;
   --color-secondary: #1a1040;
   --color-secondary-foreground: #e0dce8;
   --color-muted: #140e30;
@@ -20,11 +22,84 @@
   --color-border: #221a4a;
   --color-ring: #FF2453;
 
+  /* Extended brand palette */
+  --color-accent-warm: #FF6B35;
+  --color-accent-cool: #7B61FF;
+  --color-warning: #FFB020;
+
   --color-sidebar-bg: #0a0525;
   --color-sidebar-border: #1a1040;
   --color-sidebar-active: #FF2453;
 
   --radius: 0.5rem;
+}
+
+/* Keyframe animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px 0 var(--color-primary-glow);
+  }
+  50% {
+    box-shadow: 0 0 25px 5px var(--color-primary-glow);
+  }
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease-out both;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-dialog-in {
+  animation: dialog-in 0.15s ease-out both;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
 }
 
 /* Prose styles for MDX content */
@@ -34,23 +109,26 @@
 }
 
 .prose h1 {
-  font-size: 2rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 1rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 .prose h2 {
-  font-size: 1.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
   font-weight: 600;
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-primary);
 }
 
 .prose h3 {
+  font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 600;
   margin-top: 2rem;
@@ -83,10 +161,11 @@
   color: var(--color-primary);
   text-decoration: underline;
   text-underline-offset: 2px;
+  transition: text-shadow 0.2s ease;
 }
 
 .prose a:hover {
-  opacity: 0.8;
+  text-shadow: 0 0 8px var(--color-primary-glow);
 }
 
 .prose code {
@@ -101,6 +180,8 @@
   background: var(--color-muted);
   padding: 1rem;
   border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
   overflow-x: auto;
   margin-bottom: 1.5rem;
 }

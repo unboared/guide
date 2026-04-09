@@ -1,6 +1,6 @@
 export function Steps({ children }: { children: React.ReactNode }) {
   return (
-    <div className="my-6 ml-4 border-l-2 border-border pl-6 [counter-reset:step]">
+    <div className="my-6 ml-4 border-l-2 border-primary/20 pl-6 [counter-reset:step]">
       {children}
     </div>
   );

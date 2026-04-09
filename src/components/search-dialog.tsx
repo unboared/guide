@@ -188,14 +188,14 @@ function SearchDialog({ onClose }: { onClose: () => void }) {
   return (
     <div className="fixed inset-0 z-[100]">
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/50" onClick={onClose} />
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
 
       {/* Dialog */}
       <div className="relative mx-auto mt-[15vh] w-full max-w-lg px-4">
-        <div className="rounded-xl border border-border bg-card shadow-2xl overflow-hidden">
+        <div className="rounded-xl border border-border border-t-2 border-t-primary bg-card shadow-2xl overflow-hidden animate-dialog-in">
           {/* Search input */}
           <div className="flex items-center gap-3 border-b border-border px-4 py-3">
-            <Search className="h-4 w-4 text-muted-foreground shrink-0" />
+            <Search className="h-4 w-4 text-primary shrink-0" />
             <input
               ref={inputRef}
               type="text"

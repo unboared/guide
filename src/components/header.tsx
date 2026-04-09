@@ -19,7 +19,7 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur shadow-[0_1px_12px_-4px_var(--color-primary-glow)] supports-[backdrop-filter]:bg-background/80">
       <div className="flex h-14 items-center gap-4 px-4 lg:px-6">
         {/* Mobile menu toggle */}
         <button
@@ -37,8 +37,8 @@ export function Header() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-semibold">
-          <span className="text-lg tracking-tight">Unboared</span>
-          <span className="text-xs font-medium text-muted-foreground bg-muted px-1.5 py-0.5 rounded">
+          <span className="text-lg tracking-tight text-primary">Unboared</span>
+          <span className="text-xs font-medium text-primary bg-primary/10 border border-primary/20 px-1.5 py-0.5 rounded">
             Guide
           </span>
         </Link>

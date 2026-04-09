@@ -14,7 +14,7 @@ export function Accordion({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border border-border rounded-lg mb-3">
+    <div className={cn("border rounded-lg mb-3 transition-colors duration-200", isOpen ? "border-primary/30" : "border-border")}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full items-center justify-between px-4 py-3 text-left font-medium text-sm hover:bg-muted/50 rounded-lg transition-colors"
@@ -22,8 +22,8 @@ export function Accordion({
         <span>{title}</span>
         <ChevronDown
           className={cn(
-            "h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200",
-            isOpen && "rotate-180"
+            "h-4 w-4 shrink-0 transition-all duration-200",
+            isOpen ? "rotate-180 text-primary" : "text-muted-foreground"
           )}
         />
       </button>

@@ -25,7 +25,7 @@ export function GameCard({
   return (
     <Link
       href={`/docs/${slug}`}
-      className="group block rounded-xl border border-border bg-card p-5 transition-all hover:border-primary/30 hover:shadow-md"
+      className="group block rounded-xl border border-border bg-card p-5 transition-all duration-200 hover:border-primary/50 hover:-translate-y-0.5 hover:shadow-[0_0_20px_var(--color-primary-glow)]"
     >
       <div className="flex items-start gap-4">
         {icon ? (
@@ -47,7 +47,7 @@ export function GameCard({
             <h3 className="font-semibold group-hover:text-primary transition-colors">
               {name}
             </h3>
-            <span className="text-xs px-1.5 py-0.5 rounded-full bg-muted text-muted-foreground">
+            <span className="text-xs px-1.5 py-0.5 rounded-full bg-primary/10 text-primary">
               {category === "quiz" ? "Quiz" : "Action"}
             </span>
           </div>

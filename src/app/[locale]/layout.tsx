@@ -1,10 +1,17 @@
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { Sora } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/header";
 import { Sidebar } from "@/components/sidebar";
 import { MobileNavProvider } from "@/components/mobile-nav-provider";
+
+const sora = Sora({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["600", "700"],
+});
 
 export default async function LocaleLayout({
   children,
@@ -22,7 +29,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="h-full antialiased">
+    <html lang={locale} className={`h-full antialiased ${sora.variable}`}>
       <body className="min-h-full bg-background text-foreground">
         <NextIntlClientProvider messages={messages}>
           <MobileNavProvider>
