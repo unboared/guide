@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { Menu, X, Globe } from "lucide-react";
 import { useMobileNav } from "./mobile-nav-provider";
+import { SearchButton } from "./search-dialog";
 
 export function Header() {
   const t = useTranslations("nav");
@@ -43,6 +44,9 @@ export function Header() {
         </Link>
 
         <div className="flex-1" />
+
+        {/* Search */}
+        <SearchButton />
 
         {/* Language switcher */}
         <button

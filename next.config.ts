@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/[locale]/docs/[slug]": ["./src/content/docs/**/*.mdx"],
     "/[locale]": ["./src/content/docs/**/*.mdx"],
+    "/api/search-index": ["./src/content/docs/**/*.mdx"],
   },
 };
 
