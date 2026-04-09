@@ -3,9 +3,14 @@ import { getDoc } from "@/lib/content";
 import { getAllSlugs, getAdjacentPages, getNavItem } from "@/lib/navigation";
 import { PageNavigation } from "@/components/page-navigation";
 import { compileMDX } from "@/lib/mdx";
+import { routing } from "@/i18n/routing";
 
+// Generate all locale + slug combinations at build time
 export function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
+  const slugs = getAllSlugs();
+  return routing.locales.flatMap((locale) =>
+    slugs.map((slug) => ({ locale, slug }))
+  );
 }
 
 export async function generateMetadata({
