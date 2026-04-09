@@ -78,7 +78,9 @@ const sectionLabels: Record<string, Record<string, string>> = {
     animate: "Animer",
     "event-ideas": "Idées de soirées",
     dashboard: "Dashboard",
+    account: "Mon compte",
     help: "Aide",
+    resources: "Ressources",
   },
   en: {
     discover: "Discover",
@@ -87,7 +89,9 @@ const sectionLabels: Record<string, Record<string, string>> = {
     animate: "Hosting",
     "event-ideas": "Event Ideas",
     dashboard: "Dashboard",
+    account: "My Account",
     help: "Help",
+    resources: "Resources",
   },
 };
 

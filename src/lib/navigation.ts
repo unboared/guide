@@ -150,6 +150,21 @@ export const navigation: NavSection[] = [
     ],
   },
   {
+    key: "account",
+    items: [
+      {
+        slug: "manage-subscription",
+        titleFr: "Gérer mon abonnement",
+        titleEn: "Manage My Subscription",
+      },
+      {
+        slug: "profile-settings",
+        titleFr: "Modifier mon profil",
+        titleEn: "Profile Settings",
+      },
+    ],
+  },
+  {
     key: "help",
     items: [
       { slug: "faq", titleFr: "FAQ", titleEn: "FAQ" },
@@ -167,6 +182,16 @@ export const navigation: NavSection[] = [
         slug: "contact-support",
         titleFr: "Contacter le support",
         titleEn: "Contact Support",
+      },
+    ],
+  },
+  {
+    key: "resources",
+    items: [
+      {
+        slug: "resources",
+        titleFr: "Ressources & liens utiles",
+        titleEn: "Resources & Useful Links",
       },
     ],
   },
