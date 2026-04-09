@@ -43,10 +43,10 @@ export function Header() {
           </span>
         </Link>
 
-        <div className="flex-1" />
-
-        {/* Search */}
-        <SearchButton />
+        {/* Search — centered */}
+        <div className="flex-1 flex justify-center">
+          <SearchButton />
+        </div>
 
         {/* Language switcher */}
         <button

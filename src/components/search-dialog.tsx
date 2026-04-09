@@ -226,11 +226,16 @@ function SearchDialog({ onClose }: { onClose: () => void }) {
                 onClick={() => navigate(result.slug)}
                 onMouseEnter={() => setSelectedIdx(i)}
                 className={cn(
-                  "flex w-full items-start gap-3 px-4 py-3 text-left transition-colors",
-                  i === selectedIdx ? "bg-muted/50" : "hover:bg-muted/30"
+                  "flex w-full items-start gap-3 px-4 py-3 text-left transition-all duration-150 border-l-2",
+                  i === selectedIdx
+                    ? "bg-primary/10 border-l-primary"
+                    : "border-l-transparent hover:bg-muted/40"
                 )}
               >
-                <FileText className="h-4 w-4 mt-0.5 text-muted-foreground shrink-0" />
+                <FileText className={cn(
+                  "h-4 w-4 mt-0.5 shrink-0 transition-colors",
+                  i === selectedIdx ? "text-primary" : "text-muted-foreground"
+                )} />
                 <div className="min-w-0">
                   <div className="flex items-center gap-2">
                     <span className="text-sm font-medium">{result.title}</span>
