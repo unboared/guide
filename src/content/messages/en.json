@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "Unboared Guide",
+    "description": "Everything you need to host with Unboared. Setup, games, hosting tips, dashboard and troubleshooting."
+  },
+  "nav": {
+    "home": "Home",
+    "search": "Search...",
+    "language": "Language",
+    "backToSite": "Back to site"
+  },
+  "sections": {
+    "discover": "Discover",
+    "getting-started": "Getting Started",
+    "games": "Games",
+    "animate": "Hosting",
+    "event-ideas": "Event Ideas",
+    "dashboard": "Dashboard",
+    "account": "My Account",
+    "help": "Help & Troubleshooting",
+    "resources": "Resources"
+  },
+  "home": {
+    "title": "Unboared Guide",
+    "subtitle": "Everything you need to host with Unboared",
+    "cards": {
+      "getting-started": {
+        "title": "Getting Started",
+        "description": "Create your account and launch your first game in minutes."
+      },
+      "games": {
+        "title": "Games",
+        "description": "Discover all available games, their rules and options."
+      },
+      "animate": {
+        "title": "Hosting",
+        "description": "Tips and best practices for successful events."
+      },
+      "help": {
+        "title": "Help",
+        "description": "FAQ, troubleshooting and support contact."
+      }
+    }
+  },
+  "footer": {
+    "support": "Need help?",
+    "supportLink": "Contact us",
+    "copyright": "Unboared"
+  },
+  "doc": {
+    "onThisPage": "On this page",
+    "nextPage": "Next page",
+    "prevPage": "Previous page",
+    "editOnGithub": "Edit this page"
+  }
+}

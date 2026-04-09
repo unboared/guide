@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "Guide Unboared",
+    "description": "Tout ce qu'il faut pour animer avec Unboared. Installation, jeux, animation, dashboard et dépannage."
+  },
+  "nav": {
+    "home": "Accueil",
+    "search": "Rechercher...",
+    "language": "Langue",
+    "backToSite": "Retour au site"
+  },
+  "sections": {
+    "discover": "Découvrir",
+    "getting-started": "Premiers pas",
+    "games": "Les jeux",
+    "animate": "Animer",
+    "event-ideas": "Idées de soirées",
+    "dashboard": "Le dashboard",
+    "account": "Mon compte",
+    "help": "Aide & Dépannage",
+    "resources": "Ressources"
+  },
+  "home": {
+    "title": "Guide Unboared",
+    "subtitle": "Tout ce qu'il faut pour animer avec Unboared",
+    "cards": {
+      "getting-started": {
+        "title": "Premiers pas",
+        "description": "Créez votre compte et lancez votre première partie en quelques minutes."
+      },
+      "games": {
+        "title": "Les jeux",
+        "description": "Découvrez tous les jeux disponibles, leurs règles et leurs options."
+      },
+      "animate": {
+        "title": "Animer",
+        "description": "Conseils et bonnes pratiques pour réussir vos soirées."
+      },
+      "help": {
+        "title": "Aide",
+        "description": "FAQ, dépannage et contact du support."
+      }
+    }
+  },
+  "footer": {
+    "support": "Besoin d'aide ?",
+    "supportLink": "Contactez-nous",
+    "copyright": "Unboared"
+  },
+  "doc": {
+    "onThisPage": "Sur cette page",
+    "nextPage": "Page suivante",
+    "prevPage": "Page précédente",
+    "editOnGithub": "Modifier cette page"
+  }
+}
