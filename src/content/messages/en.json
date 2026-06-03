@@ -9,7 +9,8 @@
     "language": "Language",
     "switchLanguage": "Switch language",
     "guideBadge": "Guide",
-    "backToSite": "Back to site"
+    "backToSite": "Back to site",
+    "openConsole": "Open the console"
   },
   "sections": {
     "discover": "Discover",

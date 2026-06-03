@@ -9,7 +9,8 @@
     "language": "Langue",
     "switchLanguage": "Changer de langue",
     "guideBadge": "Guide",
-    "backToSite": "Retour au site"
+    "backToSite": "Retour au site",
+    "openConsole": "Ouvrir la console"
   },
   "sections": {
     "discover": "Découvrir",
