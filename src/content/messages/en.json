@@ -7,6 +7,8 @@
     "home": "Home",
     "search": "Search...",
     "language": "Language",
+    "switchLanguage": "Switch language",
+    "guideBadge": "Guide",
     "backToSite": "Back to site"
   },
   "sections": {

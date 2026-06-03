@@ -19,48 +19,70 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur shadow-[0_1px_12px_-4px_var(--color-primary-glow)] supports-[backdrop-filter]:bg-background/80">
-      <div className="flex h-14 items-center gap-4 px-4 lg:px-6">
+    <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--bg)]/80 backdrop-blur-xl supports-[backdrop-filter]:bg-[var(--bg)]/65">
+      <div className="flex h-16 items-center gap-3 px-4 lg:px-6">
         {/* Mobile menu toggle */}
         <button
-          className="lg:hidden p-1.5 rounded-md hover:bg-muted"
+          className="lg:hidden -ml-1 rounded-lg p-2 text-muted-foreground transition-colors hover:bg-[var(--surface)] hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
           onClick={toggle}
           aria-label="Toggle menu"
           aria-expanded={isOpen}
         >
-          {isOpen ? (
-            <X className="h-5 w-5" />
-          ) : (
-            <Menu className="h-5 w-5" />
-          )}
+          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
 
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 font-semibold">
-          <span className="text-lg tracking-tight text-primary">Unboared</span>
-          <span className="text-xs font-medium text-primary bg-primary/10 border border-primary/20 px-1.5 py-0.5 rounded">
-            Guide
+        {/* Logo: picto losange + wordmark */}
+        <Link
+          href="/"
+          className="group flex items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+        >
+          <img
+            src="/images/logo-unboared-sm-tr.png"
+            alt="Unboared"
+            width={28}
+            height={28}
+            className="h-7 w-7 shrink-0 transition-transform duration-200 group-hover:scale-105"
+          />
+          <span className="flex items-baseline gap-1.5">
+            <span
+              className="text-[1.0625rem] font-bold tracking-tight text-foreground"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Unboared
+            </span>
+            <span
+              className="rounded-md border border-primary/25 bg-[var(--pink-soft)] px-1.5 py-0.5 text-[0.625rem] font-semibold uppercase tracking-wider text-primary"
+              style={{ fontFamily: "var(--font-mono)" }}
+            >
+              {t("guideBadge")}
+            </span>
           </span>
         </Link>
 
         {/* Search — centered */}
-        <div className="flex-1 flex justify-center">
+        <div className="flex flex-1 justify-center">
           <SearchButton />
         </div>
 
         {/* Language switcher */}
         <button
           onClick={switchLocale}
-          className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded-md hover:bg-muted"
+          className="flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-[var(--surface)] hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+          aria-label={t("switchLanguage")}
         >
           <Globe className="h-4 w-4" />
-          <span className="uppercase">{locale === "fr" ? "EN" : "FR"}</span>
+          <span
+            className="uppercase"
+            style={{ fontFamily: "var(--font-mono)" }}
+          >
+            {locale === "fr" ? "EN" : "FR"}
+          </span>
         </button>
 
         {/* Back to site */}
         <a
           href="https://unboared.com"
-          className="hidden sm:flex text-sm text-muted-foreground hover:text-foreground transition-colors"
+          className="hidden text-sm text-muted-foreground transition-colors hover:text-foreground sm:flex focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 rounded-lg px-1"
           target="_blank"
           rel="noopener noreferrer"
         >

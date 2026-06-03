@@ -15,10 +15,13 @@ function SidebarContent() {
   const currentSlug = pathname.split("/docs/")[1] || "";
 
   return (
-    <nav className="h-full overflow-y-auto py-6 px-4">
+    <nav className="h-full overflow-y-auto px-4 py-7">
       {navigation.map((section) => (
-        <div key={section.key} className="mb-6">
-          <h3 className="mb-2 px-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+        <div key={section.key} className="mb-7">
+          <h3
+            className="mb-2 px-3 text-[0.6875rem] font-semibold uppercase tracking-[0.12em] text-[var(--txt-3)]"
+            style={{ fontFamily: "var(--font-mono)" }}
+          >
             {t(section.key)}
           </h3>
           <ul className="space-y-0.5">
@@ -29,13 +32,17 @@ function SidebarContent() {
                 <li key={item.slug} onClick={close}>
                   <Link
                     href={`/docs/${item.slug}`}
+                    aria-current={isActive ? "page" : undefined}
                     className={cn(
-                      "block rounded-md px-2 py-1.5 text-sm transition-all duration-150",
+                      "relative block rounded-lg px-3 py-2 text-sm transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60",
                       isActive
-                        ? "bg-primary/10 text-primary font-medium border-l-2 border-primary -ml-px"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted border-l-2 border-transparent"
+                        ? "bg-[var(--pink-soft)] font-semibold text-primary"
+                        : "text-muted-foreground hover:bg-[var(--surface)] hover:text-foreground"
                     )}
                   >
+                    {isActive && (
+                      <span className="absolute left-0 top-1/2 h-4 w-[3px] -translate-y-1/2 rounded-full bg-primary" />
+                    )}
                     {title}
                   </Link>
                 </li>
@@ -54,8 +61,8 @@ export function Sidebar() {
   return (
     <>
       {/* Desktop sidebar */}
-      <aside className="hidden lg:block w-64 shrink-0 border-r border-sidebar-border bg-sidebar-bg">
-        <div className="sticky top-14 h-[calc(100vh-3.5rem)]">
+      <aside className="hidden w-64 shrink-0 border-r border-[var(--line)] bg-sidebar-bg lg:block">
+        <div className="sticky top-16 h-[calc(100vh-4rem)]">
           <SidebarContent />
         </div>
       </aside>
@@ -63,7 +70,7 @@ export function Sidebar() {
       {/* Mobile overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 top-14 z-40 bg-black/40 lg:hidden"
+          className="fixed inset-0 top-16 z-40 bg-[var(--bg)]/70 backdrop-blur-sm lg:hidden"
           onClick={close}
         />
       )}
@@ -71,7 +78,7 @@ export function Sidebar() {
       {/* Mobile sidebar drawer */}
       <aside
         className={cn(
-          "fixed top-14 left-0 z-50 h-[calc(100vh-3.5rem)] w-72 border-r border-sidebar-border bg-sidebar-bg transition-transform duration-200 ease-in-out lg:hidden",
+          "fixed left-0 top-16 z-50 h-[calc(100vh-4rem)] w-72 border-r border-[var(--line)] bg-sidebar-bg transition-transform duration-200 ease-in-out lg:hidden",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
