@@ -22,6 +22,12 @@
     "help": "Aide & Dépannage",
     "resources": "Ressources"
   },
+  "search": {
+    "label": "Recherche",
+    "placeholder": "Rechercher dans le guide...",
+    "noResults": "Aucun résultat trouvé.",
+    "minChars": "Tapez au moins 2 caractères..."
+  },
   "home": {
     "eyebrow": "Centre d'aide",
     "title": "Guide Unboared",

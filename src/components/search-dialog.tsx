@@ -70,31 +70,6 @@ function searchEntries(
   return results.sort((a, b) => b.score - a.score).slice(0, 8);
 }
 
-const sectionLabels: Record<string, Record<string, string>> = {
-  fr: {
-    discover: "Découvrir",
-    "getting-started": "Premiers pas",
-    games: "Les jeux",
-    animate: "Animer",
-    "event-ideas": "Idées de soirées",
-    dashboard: "Dashboard",
-    account: "Mon compte",
-    help: "Aide",
-    resources: "Ressources",
-  },
-  en: {
-    discover: "Discover",
-    "getting-started": "Getting Started",
-    games: "Games",
-    animate: "Hosting",
-    "event-ideas": "Event Ideas",
-    dashboard: "Dashboard",
-    account: "My Account",
-    help: "Help",
-    resources: "Resources",
-  },
-};
-
 export function SearchButton() {
   const [open, setOpen] = useState(false);
   const t = useTranslations("nav");
@@ -114,11 +89,14 @@ export function SearchButton() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors px-2.5 py-1.5 rounded-md border border-border hover:border-muted-foreground/30 bg-muted/30"
+        className="flex items-center gap-2 rounded-lg border border-[var(--line-2)] bg-[var(--surface)] px-2.5 py-1.5 text-sm text-muted-foreground transition-colors hover:border-primary/40 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
       >
         <Search className="h-3.5 w-3.5" />
         <span className="hidden sm:inline">{t("search")}</span>
-        <kbd className="hidden sm:inline text-[10px] bg-muted px-1 py-0.5 rounded font-mono">
+        <kbd
+          className="hidden rounded bg-[var(--surface-3)] px-1.5 py-0.5 text-[10px] sm:inline"
+          style={{ fontFamily: "var(--font-mono)" }}
+        >
           ⌘K
         </kbd>
       </button>
@@ -133,6 +111,8 @@ function SearchDialog({ onClose }: { onClose: () => void }) {
   const [results, setResults] = useState<SearchResult[]>([]);
   const [selectedIdx, setSelectedIdx] = useState(0);
   const locale = useLocale();
+  const t = useTranslations("search");
+  const ts = useTranslations("sections");
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -186,27 +166,40 @@ function SearchDialog({ onClose }: { onClose: () => void }) {
   }
 
   return (
-    <div className="fixed inset-0 z-[100]">
+    <div
+      className="fixed inset-0 z-[100]"
+      role="dialog"
+      aria-modal="true"
+      aria-label={t("label")}
+    >
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
+      <div
+        className="absolute inset-0 bg-[var(--bg)]/70 backdrop-blur-sm"
+        onClick={onClose}
+      />
 
       {/* Dialog */}
       <div className="relative mx-auto mt-[15vh] w-full max-w-lg px-4">
-        <div className="rounded-xl border border-border border-t-2 border-t-primary bg-card shadow-2xl overflow-hidden animate-dialog-in">
+        <div className="animate-dialog-in overflow-hidden rounded-2xl border border-[var(--line-2)] border-t-2 border-t-primary bg-[var(--surface)] shadow-2xl">
           {/* Search input */}
-          <div className="flex items-center gap-3 border-b border-border px-4 py-3">
-            <Search className="h-4 w-4 text-primary shrink-0" />
+          <div className="flex items-center gap-3 border-b border-[var(--line)] px-4 py-3">
+            <Search className="h-4 w-4 shrink-0 text-primary" />
             <input
               ref={inputRef}
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={onKeyDown}
-              placeholder={locale === "fr" ? "Rechercher dans le guide..." : "Search the guide..."}
+              placeholder={t("placeholder")}
+              aria-label={t("placeholder")}
               className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
             />
-            <button onClick={onClose} className="p-0.5 hover:bg-muted rounded">
-              <X className="h-4 w-4 text-muted-foreground" />
+            <button
+              onClick={onClose}
+              aria-label="Close"
+              className="rounded p-1 text-muted-foreground transition-colors hover:bg-[var(--surface-2)] hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+            >
+              <X className="h-4 w-4" />
             </button>
           </div>
 
@@ -214,9 +207,7 @@ function SearchDialog({ onClose }: { onClose: () => void }) {
           <div className="max-h-80 overflow-y-auto">
             {query.length >= 2 && results.length === 0 && (
               <div className="px-4 py-8 text-center text-sm text-muted-foreground">
-                {locale === "fr"
-                  ? "Aucun résultat trouvé."
-                  : "No results found."}
+                {t("noResults")}
               </div>
             )}
 
@@ -226,24 +217,24 @@ function SearchDialog({ onClose }: { onClose: () => void }) {
                 onClick={() => navigate(result.slug)}
                 onMouseEnter={() => setSelectedIdx(i)}
                 className={cn(
-                  "flex w-full items-start gap-3 px-4 py-3 text-left transition-all duration-150 border-l-2",
+                  "flex w-full items-start gap-3 border-l-2 px-4 py-3 text-left transition-all duration-150",
                   i === selectedIdx
-                    ? "bg-primary/10 border-l-primary"
-                    : "border-l-transparent hover:bg-muted/40"
+                    ? "border-l-primary bg-[var(--pink-soft)]"
+                    : "border-l-transparent hover:bg-[var(--surface-2)]"
                 )}
               >
                 <FileText className={cn(
-                  "h-4 w-4 mt-0.5 shrink-0 transition-colors",
+                  "mt-0.5 h-4 w-4 shrink-0 transition-colors",
                   i === selectedIdx ? "text-primary" : "text-muted-foreground"
                 )} />
                 <div className="min-w-0">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm font-medium">{result.title}</span>
-                    <span className="text-[10px] text-muted-foreground bg-muted px-1.5 py-0.5 rounded-full">
-                      {sectionLabels[locale]?.[result.section] || result.section}
+                    <span className="text-sm font-medium text-foreground">{result.title}</span>
+                    <span className="rounded-full bg-[var(--surface-3)] px-1.5 py-0.5 text-[10px] text-muted-foreground">
+                      {ts.has(result.section) ? ts(result.section) : result.section}
                     </span>
                   </div>
-                  <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">
+                  <p className="mt-0.5 line-clamp-2 text-xs text-muted-foreground">
                     {result.excerpt}
                   </p>
                 </div>
@@ -252,9 +243,7 @@ function SearchDialog({ onClose }: { onClose: () => void }) {
 
             {query.length < 2 && (
               <div className="px-4 py-6 text-center text-sm text-muted-foreground">
-                {locale === "fr"
-                  ? "Tapez au moins 2 caractères..."
-                  : "Type at least 2 characters..."}
+                {t("minChars")}
               </div>
             )}
           </div>
