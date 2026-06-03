@@ -1,37 +1,86 @@
 @import "tailwindcss";
 
+/*
+ * Unboared design system — "command center" dark theme.
+ * Canonical tokens shared with console / unboared-b2b
+ * (see unboared-wiki .../02-brand/playbook-redesign-app.md).
+ * Raw tokens live on :root so var() works in CSS, inline styles
+ * and portalled nodes; the @theme block maps them to Tailwind utilities.
+ */
+:root {
+  /* Surface scale */
+  --bg: #070219;
+  --bg-2: #0d0820;
+  --surface: #161126;
+  --surface-2: #1d1730;
+  --surface-3: #271f3c;
+
+  /* Hairlines */
+  --line: rgba(255, 255, 255, 0.07);
+  --line-2: rgba(255, 255, 255, 0.13);
+
+  /* Text */
+  --txt: #f4f1fb;
+  --txt-2: #a59fbb;
+  --txt-3: #6f6987;
+
+  /* Accents + soft fills */
+  --pink: #ff2453;
+  --pink-soft: rgba(255, 36, 83, 0.14);
+  --green: #1bc65f;
+  --green-soft: rgba(27, 198, 95, 0.14);
+  --blue: #20abf3;
+  --blue-soft: rgba(32, 171, 243, 0.14);
+  --gold: #f3ca20;
+  --gold-soft: rgba(243, 202, 32, 0.14);
+
+  /* Glow used by hover/active states */
+  --pink-glow: rgba(255, 36, 83, 0.22);
+
+  /* Radii */
+  --r: 18px;
+  --r-sm: 12px;
+}
+
 @theme inline {
-  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
-  --font-display: "Sora", "Sora Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
 
-  /* Core brand: dark navy + red accent */
-  --color-background: #070219;
-  --color-foreground: #f0edf5;
-  --color-card: #0e0930;
-  --color-card-foreground: #f0edf5;
-  --color-primary: #FF2453;
+  /* Semantic colors (map to canonical tokens above) */
+  --color-background: var(--bg);
+  --color-foreground: var(--txt);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--txt);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-primary: var(--pink);
   --color-primary-foreground: #ffffff;
-  --color-primary-glow: #FF245330;
-  --color-secondary: #1a1040;
-  --color-secondary-foreground: #e0dce8;
-  --color-muted: #140e30;
-  --color-muted-foreground: #9890ab;
-  --color-accent: #1a1040;
-  --color-accent-foreground: #e0dce8;
-  --color-border: #221a4a;
-  --color-ring: #FF2453;
+  --color-primary-glow: var(--pink-glow);
+  --color-secondary: var(--surface-2);
+  --color-secondary-foreground: var(--txt);
+  --color-muted: var(--surface);
+  --color-muted-foreground: var(--txt-2);
+  --color-accent: var(--surface-2);
+  --color-accent-foreground: var(--txt);
+  --color-border: var(--line-2);
+  --color-ring: var(--pink);
 
-  /* Extended brand palette */
-  --color-accent-warm: #FF6B35;
-  --color-accent-cool: #7B61FF;
-  --color-warning: #FFB020;
+  /* Status / callout palette */
+  --color-pink: var(--pink);
+  --color-pink-soft: var(--pink-soft);
+  --color-green: var(--green);
+  --color-green-soft: var(--green-soft);
+  --color-blue: var(--blue);
+  --color-blue-soft: var(--blue-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
 
-  --color-sidebar-bg: #0a0525;
-  --color-sidebar-border: #1a1040;
-  --color-sidebar-active: #FF2453;
+  --color-sidebar-bg: var(--bg-2);
+  --color-sidebar-border: var(--line);
+  --color-sidebar-active: var(--pink);
 
-  --radius: 0.5rem;
+  --radius: 0.75rem;
 }
 
 /* Keyframe animations */
