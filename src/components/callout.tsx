@@ -1,29 +1,17 @@
-import { cn } from "@/lib/utils";
 import { Info, Lightbulb, AlertTriangle } from "lucide-react";
 
 type CalloutType = "tip" | "info" | "warning";
 
 const config: Record<
   CalloutType,
-  { icon: typeof Info; borderClass: string; bgClass: string; iconClass: string }
+  { icon: typeof Info; color: string; soft: string }
 > = {
-  tip: {
-    icon: Lightbulb,
-    borderClass: "border-[#FF6B35]/30",
-    bgClass: "bg-[#FF6B35]/5",
-    iconClass: "text-[#FF6B35]",
-  },
-  info: {
-    icon: Info,
-    borderClass: "border-[#7B61FF]/30",
-    bgClass: "bg-[#7B61FF]/5",
-    iconClass: "text-[#7B61FF]",
-  },
+  tip: { icon: Lightbulb, color: "var(--green)", soft: "var(--green-soft)" },
+  info: { icon: Info, color: "var(--blue)", soft: "var(--blue-soft)" },
   warning: {
     icon: AlertTriangle,
-    borderClass: "border-[#FFB020]/30",
-    bgClass: "bg-[#FFB020]/5",
-    iconClass: "text-[#FFB020]",
+    color: "var(--gold)",
+    soft: "var(--gold-soft)",
   },
 };
 
@@ -34,18 +22,21 @@ export function Callout({
   type?: CalloutType;
   children: React.ReactNode;
 }) {
-  const { icon: Icon, borderClass, bgClass, iconClass } = config[type];
+  const { icon: Icon, color, soft } = config[type];
 
   return (
     <div
-      className={cn(
-        "my-6 flex gap-3 rounded-lg border p-4",
-        borderClass,
-        bgClass
-      )}
+      className="my-6 flex gap-3 rounded-xl border border-[var(--line-2)] p-4"
+      style={{
+        backgroundColor: soft,
+        borderLeftColor: color,
+        borderLeftWidth: "3px",
+      }}
     >
-      <Icon className={cn("mt-0.5 h-5 w-5 shrink-0", iconClass)} />
-      <div className="text-sm leading-relaxed [&>p]:mb-0">{children}</div>
+      <Icon className="mt-0.5 h-5 w-5 shrink-0" style={{ color }} />
+      <div className="text-sm leading-relaxed text-foreground [&>p]:mb-0 [&>p+p]:mt-2 [&_a]:text-primary [&_a]:underline">
+        {children}
+      </div>
     </div>
   );
 }
