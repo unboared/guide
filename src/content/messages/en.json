@@ -23,8 +23,11 @@
     "resources": "Resources"
   },
   "home": {
+    "eyebrow": "Help center",
     "title": "Unboared Guide",
     "subtitle": "Everything you need to host with Unboared",
+    "cta": "Get started",
+    "ctaSecondary": "Browse the games",
     "cards": {
       "getting-started": {
         "title": "Getting Started",

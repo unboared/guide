@@ -23,8 +23,11 @@
     "resources": "Ressources"
   },
   "home": {
+    "eyebrow": "Centre d'aide",
     "title": "Guide Unboared",
     "subtitle": "Tout ce qu'il faut pour animer avec Unboared",
+    "cta": "Commencer maintenant",
+    "ctaSecondary": "Parcourir les jeux",
     "cards": {
       "getting-started": {
         "title": "Premiers pas",
