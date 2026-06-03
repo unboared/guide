@@ -5,7 +5,8 @@
       "name": "guide-dev",
       "runtimeExecutable": "bash",
       "runtimeArgs": ["-c", "source ~/.nvm/nvm.sh && nvm use 22 && pnpm dev"],
-      "port": 3000
+      "port": 3007,
+      "autoPort": false
     }
   ]
 }

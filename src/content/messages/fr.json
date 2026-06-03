@@ -7,7 +7,10 @@
     "home": "Accueil",
     "search": "Rechercher...",
     "language": "Langue",
-    "backToSite": "Retour au site"
+    "switchLanguage": "Changer de langue",
+    "guideBadge": "Guide",
+    "backToSite": "Retour au site",
+    "openConsole": "Ouvrir la console"
   },
   "sections": {
     "discover": "Découvrir",
@@ -20,9 +23,18 @@
     "help": "Aide & Dépannage",
     "resources": "Ressources"
   },
+  "search": {
+    "label": "Recherche",
+    "placeholder": "Rechercher dans le guide...",
+    "noResults": "Aucun résultat trouvé.",
+    "minChars": "Tapez au moins 2 caractères..."
+  },
   "home": {
+    "eyebrow": "Centre d'aide",
     "title": "Guide Unboared",
     "subtitle": "Tout ce qu'il faut pour animer avec Unboared",
+    "cta": "Commencer maintenant",
+    "ctaSecondary": "Parcourir les jeux",
     "cards": {
       "getting-started": {
         "title": "Premiers pas",

@@ -14,10 +14,16 @@ export function Accordion({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={cn("border rounded-lg mb-3 transition-colors duration-200", isOpen ? "border-primary/30" : "border-border")}>
+    <div
+      className={cn(
+        "mb-3 rounded-xl border bg-[var(--surface)] transition-colors duration-200",
+        isOpen ? "border-primary/40" : "border-[var(--line)]"
+      )}
+    >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between px-4 py-3 text-left font-medium text-sm hover:bg-muted/50 rounded-lg transition-colors"
+        aria-expanded={isOpen}
+        className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-medium text-foreground transition-colors hover:bg-[var(--surface-2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
       >
         <span>{title}</span>
         <ChevronDown
@@ -34,7 +40,7 @@ export function Accordion({
         )}
       >
         <div className="overflow-hidden">
-          <div className="px-4 pb-4 text-sm text-muted-foreground leading-relaxed [&>p]:mb-2 [&>p:last-child]:mb-0 [&>a]:text-primary [&>a]:underline">
+          <div className="px-4 pb-4 text-sm leading-relaxed text-muted-foreground [&>a]:text-primary [&>a]:underline [&>p]:mb-2 [&>p:last-child]:mb-0">
             {children}
           </div>
         </div>

@@ -7,7 +7,10 @@
     "home": "Home",
     "search": "Search...",
     "language": "Language",
-    "backToSite": "Back to site"
+    "switchLanguage": "Switch language",
+    "guideBadge": "Guide",
+    "backToSite": "Back to site",
+    "openConsole": "Open the console"
   },
   "sections": {
     "discover": "Discover",
@@ -20,9 +23,18 @@
     "help": "Help & Troubleshooting",
     "resources": "Resources"
   },
+  "search": {
+    "label": "Search",
+    "placeholder": "Search the guide...",
+    "noResults": "No results found.",
+    "minChars": "Type at least 2 characters..."
+  },
   "home": {
+    "eyebrow": "Help center",
     "title": "Unboared Guide",
     "subtitle": "Everything you need to host with Unboared",
+    "cta": "Get started",
+    "ctaSecondary": "Browse the games",
     "cards": {
       "getting-started": {
         "title": "Getting Started",

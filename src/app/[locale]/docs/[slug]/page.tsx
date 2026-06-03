@@ -57,7 +57,7 @@ export default async function DocPage({
     const title = locale === "fr" ? navItem.titleFr : navItem.titleEn;
     return (
       <div>
-        <article className="prose">
+        <article className="prose animate-fade-in-up">
           <h1>{title}</h1>
           <p className="text-muted-foreground">
             {locale === "fr"
@@ -74,7 +74,7 @@ export default async function DocPage({
 
   return (
     <div>
-      <article className="prose">
+      <article className="prose animate-fade-in-up">
         <h1>{doc.meta.title}</h1>
         {doc.meta.description && (
           <p className="text-lg text-muted-foreground -mt-2 mb-8">
