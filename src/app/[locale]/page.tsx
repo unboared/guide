@@ -95,7 +95,7 @@ export default function HomePage() {
               "group relative animate-fade-in-up overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--surface)] p-6 transition-all duration-200",
               "hover:-translate-y-0.5 hover:border-primary/50 hover:bg-[var(--surface-2)] hover:shadow-[0_0_24px_var(--pink-glow)]",
               "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60",
-              glow && "animate-glow-pulse border-primary/30"
+              glow && "border-primary/30 shadow-[0_0_24px_var(--pink-glow)]"
             )}
             style={{ animationDelay: `${0.25 + index * 0.08}s` }}
           >
