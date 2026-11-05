@@ -100,6 +100,26 @@ export const navigation: NavSection[] = [
     ],
   },
   {
+    key: "pro",
+    items: [
+      {
+        slug: "pro-plan",
+        titleFr: "La formule Pro",
+        titleEn: "The Pro Plan",
+      },
+      {
+        slug: "dual-screen",
+        titleFr: "Le double écran",
+        titleEn: "Dual Screen",
+      },
+      {
+        slug: "my-brand",
+        titleFr: "Votre logo et vos couleurs",
+        titleEn: "Your Logo and Colours",
+      },
+    ],
+  },
+  {
     key: "event-ideas",
     items: [
       {
