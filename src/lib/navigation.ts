@@ -34,6 +34,11 @@ export const navigation: NavSection[] = [
         titleEn: "Create Your Account",
       },
       {
+        slug: "welcome-tutorial",
+        titleFr: "Le tutoriel de bienvenue",
+        titleEn: "The Welcome Tutorial",
+      },
+      {
         slug: "install",
         titleFr: "Installer Unboared",
         titleEn: "Install Unboared",
@@ -172,6 +177,11 @@ export const navigation: NavSection[] = [
   {
     key: "account",
     items: [
+      {
+        slug: "my-account",
+        titleFr: "Mon compte en un coup d'œil",
+        titleEn: "My Account at a Glance",
+      },
       {
         slug: "manage-subscription",
         titleFr: "Gérer mon abonnement",
