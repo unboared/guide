@@ -56,6 +56,39 @@ Unboared propose deux catégories de jeux :
   color="#e9bc0c"
 />
 
+<GameCard
+  slug="music-bingo"
+  name="Bingo Musical"
+  description="Le bingo en musique : chacun a son carton de 16 artistes, les extraits passent sur la TV, et on crie BINGO."
+  players="2-200"
+  duration="12-20 min"
+  category="quiz"
+  icon="/images/games/music-bingo.svg"
+  color="#ff2d75"
+/>
+
+<GameCard
+  slug="draw-guessr"
+  name="Draw Guessr"
+  description="Tout le monde dessine en même temps sur son téléphone, puis chacun devine le dessin d'un autre."
+  players="2-30"
+  duration="5-8 min"
+  category="quiz"
+  icon="/images/games/draw-guessr.png"
+  color="#e9bc0c"
+/>
+
+<GameCard
+  slug="estim"
+  name="Estim'"
+  description="Devinez le prix de vrais biens immobiliers. Le plus proche du vrai prix marque le plus de points."
+  players="1-30"
+  duration="5-7 min"
+  category="quiz"
+  icon="/images/games/estim.png"
+  color="#1bc65f"
+/>
+
 ## Les jeux Action
 
 <GameCard
@@ -80,16 +113,83 @@ Unboared propose deux catégories de jeux :
   color="#20abf3"
 />
 
+<GameCard
+  slug="untierce"
+  name="Untiercé"
+  description="Le tiercé des canards : six canards font la course, chacun mise ses jetons fictifs sur son champion."
+  players="1-100"
+  duration="2 min par course"
+  category="action"
+  icon="/images/games/untierce.png"
+  color="#e9bc0c"
+/>
+
+<GameCard
+  slug="unpop"
+  name="UnPop"
+  description="Le téléphone devient un pistolet de fête foraine : visez la TV pour éclater ballons, cibles et conserves."
+  players="1-16"
+  duration="2 min"
+  category="action"
+  icon="/images/games/unpop.png"
+  color="#ff2453"
+/>
+
+<GameCard
+  slug="polyvroom"
+  name="Poly Vroom"
+  description="Course de karts en écran partagé. Un championnat en 4 courses, avec drifts et mini-turbos."
+  players="1-8"
+  duration="12-16 min"
+  category="action"
+  icon="/images/games/polyvroom.png"
+  color="#20abf3"
+/>
+
+<GameCard
+  slug="footboared"
+  name="FootBoared"
+  description="Match de foot à plusieurs : deux équipes, un joystick, un bouton de frappe. Premier à 3 buts."
+  players="2-20"
+  duration="2-5 min"
+  category="action"
+  icon="/images/games/footboared.png"
+  color="#1bc65f"
+/>
+
+## Durée de chaque jeu
+
+Pour construire le programme de votre soirée, voici la durée d'une partie avec les réglages par défaut. Chaque fiche de jeu donne le détail, ainsi qu'un texte prêt à dire au micro pour lancer la partie.
+
+| Jeu | Durée d'une partie | Joueurs | Peut-on régler la durée ? |
+|---|---|---|---|
+| [Bingo Musical](/docs/music-bingo) | Environ 16 min | 2 à 200 | Oui : courte (12 min), normale (16 min), longue (20 min) |
+| [Unblind Test](/docs/unblind-test) | Environ 5 min (15 titres) | Illimité | Oui : jusqu'à 40 titres (20 min) |
+| [P'tit Bac](/docs/petit-bac) | 5 à 10 min | Illimité | Oui : nombre de manches et temps par manche |
+| [UnQuizz](/docs/unquizz) | 5 à 10 min | Illimité | Oui, selon le nombre de questions |
+| [GeoLoc](/docs/geoloc) | Environ 5 min | Illimité | Oui, selon le nombre de villes |
+| [Draw Guessr](/docs/draw-guessr) | 5 à 8 min (4 manches) | 2 à 30 | Oui : 3 à 7 manches |
+| [Estim'](/docs/estim) | 5 à 7 min (10 manches) | 1 à 30 | Oui : 5 à 15 manches |
+| [Untiercé](/docs/untierce) | 5 à 6 min (3 courses) | 1 à 100 | Oui : 3 à 30 courses, environ 2 min par course |
+| [UnPop](/docs/unpop) | Environ 2 min | 1 à 16 | Non |
+| [Poly Vroom](/docs/polyvroom) | 12 à 16 min (4 courses) | 1 à 8 | Non |
+| [Gloofy Pop](/docs/gloofy-pop) | 5 à 15 min | Illimité | Oui |
+| [Bomber Kitten](/docs/bomber-kitten) | Environ 5 min | 2 à 20 | Non |
+| [FootBoared](/docs/footboared) | 2 à 5 min par match | 2 à 20 | Oui : 1 à 5 min |
+
 ## Quel jeu choisir ?
 
 | Situation | Jeu recommandé | Pourquoi |
 |-----------|---------------|----------|
-| Début de soirée, peu de monde | GeoLoc ou Unblind Test | Accessibles, engageants, pas besoin de beaucoup de joueurs |
-| Groupe qui se connaît | Bomber Kitten ou Gloofy Pop | Plus compétitifs, créent de l'interaction |
-| Soirée à thème musical | Unblind Test | Plus de 30 playlists, ou la vôtre |
+| Début de soirée, peu de monde | GeoLoc, Estim' ou Unblind Test | Accessibles, engageants, pas besoin de beaucoup de joueurs |
+| Salle pleine | Bingo Musical, Unblind Test ou Untiercé | Tout le monde joue en même temps, même à 100 |
+| Groupe qui se connaît | Draw Guessr, Bomber Kitten ou Poly Vroom | Plus compétitifs, créent de l'interaction et des fous rires |
+| Soirée à thème musical | Unblind Test ou Bingo Musical | Plus de 30 playlists, ou la vôtre |
 | Quiz personnalisé | UnQuizz | Créez vos propres questions |
-| Public familial / multigénérationnel | P'tit Bac ou GeoLoc | Tout le monde peut participer |
+| Public familial / multigénérationnel | P'tit Bac, GeoLoc ou Draw Guessr | Tout le monde peut participer |
+| Soir de match | FootBoared | Un match de 3 minutes, parfait à la mi-temps |
+| Entre deux jeux, ou en fil rouge | Untiercé ou UnPop | Une course ou une partie dure 2 minutes |
 
 <Callout type="tip">
-La plupart des jeux Quiz & Culture supportent un nombre illimité de joueurs. Les jeux Action sont parfois limités (Bomber Kitten : 20 max) pour garder l'expérience optimale.
+Les jeux Quiz & Culture accueillent en général toute la salle. Les jeux Action sont parfois limités (Poly Vroom : 8 pilotes, UnPop : 16 joueurs, Bomber Kitten et FootBoared : 20 joueurs) pour garder l'expérience optimale : faites tourner les joueurs.
 </Callout>
